@@ -1,0 +1,7 @@
+port: "8000"
+smtp:
+  port: "587"
+  host: "smtp.gmail.com"
+  gmail: "giftstochildren@gmail.com"
+  password: "jknj qhgv strt iuts"
+  
