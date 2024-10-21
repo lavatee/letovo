@@ -5,11 +5,12 @@ services:
   backend:
     build: 
       context: ./backend
+    command: ./main
     networks:
       - app
   frontend:
     build: 
-      context: ./frontend/childrenapp
+      context: ./frontend
     networks:
       - app
   nginx:
