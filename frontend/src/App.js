@@ -10,7 +10,7 @@ function Table() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('api/api/children', {
+        const response = await fetch('/api/api/children', {
           method: "GET"
         });
         const data = await response.json();
@@ -93,7 +93,7 @@ function Form() {
       alert("Заполните все поля")
       return
     }
-    const response = await fetch(`api/api/children/${id.id}`, {
+    const response = await fetch(`/api/api/children/${id.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -113,7 +113,7 @@ function Form() {
   }
   async function SendCode() {
     const email = document.getElementById('email').value
-    const response = await fetch('api/api/codes', {
+    const response = await fetch('/api/api/codes', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -267,7 +267,7 @@ function Admin() {
 
   async function SendCode() {
     const email = document.getElementById('email').value
-    const response = await fetch('api/api/codes', {
+    const response = await fetch('/api/api/codes', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -284,7 +284,7 @@ function Admin() {
 
   async function fetchUsers() {
     try {
-      const response = await fetch('api/api/admin/children', {
+      const response = await fetch('/api/api/admin/children', {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
