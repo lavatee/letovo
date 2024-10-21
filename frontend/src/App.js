@@ -2,6 +2,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useParams, useNavigate } from 'react-router-dom';
+import By from './By';
 
 function Table() {
   const navigate = useNavigate()
@@ -27,6 +28,7 @@ function Table() {
   console.log(users)
   return (
     <div>
+      <img src='https://raw.githubusercontent.com/lavatee/facepalm/refs/heads/main/img/%D0%9B%D0%B5%D1%82%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9.png' style={{width: '20vw', marginLeft: '40vw'}} />
       <h1>Таблица детей</h1>
       <ul className='table'>
         <li className='title'>
@@ -44,7 +46,7 @@ function Table() {
             <h3>{user.Age > 0 ? user.Age : ""}</h3>
             <a onClick={() => {navigate(`/letter/${user.PhotoUrl.replace(/\//g, "*slash")}`); console.log(user.PhotoUrl.replace(/\//g, "*slash"))}}>{user.Gift}</a>
             <h3>{user.IsTaken ? "занят" : "не занят"}</h3>
-            <h3 onClick={() => {navigate(!(user.IsTaken) ? `/form/${user.Id}` : "")}}>Подарить подарок</h3>
+            <h3 onClick={() => {navigate(!(user.IsTaken) ? `/form/${user.Id}` : "")}} style={{color: 'blue'}}>Подарить подарок</h3>
           </li>
         )) : ""}
       </ul>
@@ -66,12 +68,12 @@ function Form() {
   return (
     <>
     <h1>Для того, чтобы выбрать ребенка для подарка, заполните форму</h1>
-    <input id='email' placeholder='Введите почту'/>
-    <input id='firstname' placeholder='Введите имя'/>
-    <input id='lastname' placeholder='Введите фамилию'/>
-    <input id='tg' placeholder='Введите username в Telegram'/>
-    <input id='phone' placeholder='Введите номер телефона'/>
-    <input id='class' placeholder='Введите класс'/>
+    <input id='email' placeholder='Ваша почта'/>
+    <input id='firstname' placeholder='Ваше имя'/>
+    <input id='lastname' placeholder='Ваша фамилия'/>
+    <input id='tg' placeholder='Ваш ТГ'/>
+    <input id='phone' placeholder='Ваш номер телефона'/>
+    <input id='class' placeholder='Ваша параллель'/>
     <button onClick={SendCode}>Подтвердить почту</button>
     <h2>На почту был отправлен код. Также проверьте папку "Спам"</h2>
     <input id='code' placeholder='Введите код, отправленный на вашу почту'/>
@@ -101,10 +103,8 @@ function Form() {
       body: JSON.stringify({email: email, child_id: id.id, code: code, first_name: firstName, last_name: lastName, telegram: tg, phone_number: phone, class: userClass})
     });
     const data = await response.json();
-    if (!(data?.child_fullname != "")) {
-      if (data?.error != "") {
-        alert("ребенок оказался занятым, либо данные введены некорректно")
-      }
+    if (!(data?.child_fullname)) {
+      alert("ребенок оказался занятым, данные введены некорректно или вы уже занимали ребенка")
     } else {
       setOk(true)
       setGift(data.child_gift)
@@ -161,23 +161,22 @@ function About() {
     
     новогоднем письме, и почувствует атмосферу волшебного праздника.
         </p>
-        <h2 style={{color: "red", textAlign: 'center'}}>Но мой проект невозможно будет осуществить без вашей помощи!</h2>
+        <h2 style={{color: "#4F81EB", textAlign: 'center'}}>Но мой проект невозможно будет осуществить без вашей помощи!</h2>
         <h1 style={{textAlign: 'center'}}>Итак, в чем суть моей акции?</h1>
         <p style={{textAlign: 'center'}}>
-        Идея в том, что каждый из вас сможет сыграть роль рождественского эльфа, <p style={{color: "red", fontWeight: 'bold'}}>подготовив
+        Идея в том, что каждый из вас сможет сыграть роль рождественского эльфа, <p style={{color: "#4F81EB", fontWeight: 'bold'}}>подготовив
         подарок для ребенка из детского дома, о котором тот писал в своем новогоднем письме</p>, чтобы
     в день проведения праздничного мероприятия я (конечно же, от лица волшебных эльфов!)
     
     подарила подготовленные вами подарки детям.
     
-    Кроме того, обязательным условием является <p style={{color: "red", fontWeight: 'bold', textAlign: "center"}}>написать ребенку мотивационное письмо</p>, в
+    Кроме того, обязательным условием является <p style={{color: "#4F81EB", fontWeight: 'bold', textAlign: "center"}}>написать ребенку мотивационное письмо,</p>в
     
     котором вы
     
-    поддержите его интересы (данная информация будет указана в его письме, о чем я расскажу
-    совсем скоро), а может захотите и дальше общаться с ним, поддерживая дружескую переписку.
+    поддержите его интересы, а может захотите и дальше общаться с ним, поддерживая дружескую переписку.
     Написать письмо - очень доброе дело, которое точно принесет положительные эмоции ребенку,
-    однако, чтобы оно вызвало у вас больше радости и получилось ещё более искренним, <p style={{color: "red", fontWeight: 'bold'}}>за его
+    однако, чтобы оно вызвало у вас больше радости и получилось ещё более искренним, <p style={{color: "#4F81EB", fontWeight: 'bold'}}>за его
     написание вам зачислятся определенные балы в диплом Летово!</p>
         </p>
         
@@ -192,7 +191,7 @@ function About() {
       <div style={{alignContent: 'center', alignItems: 'center', width: '80vw', marginLeft: '10vw', marginTop: '10vh'}}>
         <h2>Таким образом, задачи у участников акции будут несложные и очень интересные:</h2>
         <p>
-          1. Ознакомившись с письмами детей, выбрать ребенка, которому участник акции (или небольшая группа учеников) захочет подарить подарок и заполнить небольшую форму, тем самым «забронировав» выбранный подарок (желательно сделать это до …)
+          1. Ознакомившись с письмами детей, выбрать ребенка, которому участник акции (или небольшая группа учеников) захочет подарить подарок и заполнить небольшую форму, тем самым «забронировав» выбранный подарок.
         </p>
         <p>
           2. Подготовить подарок и упаковать его в тот вид, в котором он будет подарен ребенку.
@@ -201,7 +200,7 @@ function About() {
           3. Написать письмо, сфотографировать его так, чтобы было видно, что работа принадлежит вам. *если ученики решили объединиться в группу, чтобы подарить один подарок от всех её участников, то письмо может быть одним на всех
         </p>
         <p>
-          4. Надежно упаковав подарок и письмо (важно, чтобы письмо было в конверте, но внутрь подарка его складывать не нужно), отправить его одной из транспортных компаний по указанным данным получателя (данные будут представлены непосредственно заинтересовавшимся в акции) до ....
+          4. Надежно упаковав подарок и письмо (важно, чтобы письмо было в конверте, но внутрь подарка его складывать не нужно), отправить его одной из транспортных компаний по указанным данным получателя (данные будут представлены непосредственно заинтересовавшимся в акции) до 25 ноября.
         </p>
         <p>
           5. Внести трек номер и транспортную компанию в ту же форму (из первого пункта).
@@ -209,7 +208,7 @@ function About() {
         <p>
           6. Гордиться собой и в скором времени получить фотографии детей с дня проведения праздника, новогоднее письмо выбранного вами ребенка на память, а также балы в диплом Летово!
         </p>
-        <p>
+        <p style={{color: '#4F81EB'}}>
           По всем возникшим вопросам вы можете писать мне в ТГ (@Julis0009)
         </p>
         <p>
@@ -318,6 +317,7 @@ function Letter() {
   )
 }
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -327,6 +327,7 @@ function App() {
         <Route exact path='/form/:id' element={<Form/>}/>
         <Route exact path='/admin' element={<Admin/>}/>
         <Route exact path='/letter/:url' element={<Letter/>}/>
+        <Route exact path='/by' element={<By/>}/>
       </Routes>
     </BrowserRouter>
   )

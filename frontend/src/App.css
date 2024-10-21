@@ -21,9 +21,12 @@ body {
  }
  
  .child a {
-  text-decoration: none;
-  color: blue;
+  text-align: center;
   font-size: 12px;
+  width: 16.66vw;
+  font-family: "Jost", sans-serif;
+  font-style: normal;
+  color: blue;
  }
  
  h3 {
@@ -40,13 +43,7 @@ body {
   font-family: "Jost", sans-serif;
   font-style: normal;
  }
-a {
-  text-align: center;
-  font-size: 12px;
-  width: 16.66vw;
-  font-family: "Jost", sans-serif;
-  font-style: normal;
- }
+
 
  .table {
   width: 90vw;
@@ -68,7 +65,7 @@ a {
 h1 {
   font-family: "Balsamiq Sans", sans-serif;
   font-style: normal;
-  color: #0E2D1F;
+  color: #001F61;
   text-align: center;
 }
 
@@ -76,13 +73,13 @@ h2 {
   font-family: "Jost", sans-serif;
   font-style: normal;
   text-align: center;
-  color: #0E2D1F;
+  color: #001F61;
 }
 
 p {
   font-family: "Jost", sans-serif;
   font-style: normal;
-  color: #0E2D1F;
+  color: #001F61;
 }
 
 input {
