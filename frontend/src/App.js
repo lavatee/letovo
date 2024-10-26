@@ -11,7 +11,7 @@ function Table() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://77.222.46.98/api/api/children', {
+        const response = await fetch('/api/api/children', {
           method: "GET"
         });
         const data = await response.json();
