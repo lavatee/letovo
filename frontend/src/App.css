@@ -102,3 +102,9 @@ input::placeholder {
   color: white;
   opacity: 80%;
 }
+.taken {
+  color: red;
+}
+.not-taken {
+  color: black;
+}
