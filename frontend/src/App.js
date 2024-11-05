@@ -28,7 +28,9 @@ function Table() {
   console.log(users)
   return (
     <div>
-      <img src='https://raw.githubusercontent.com/lavatee/facepalm/refs/heads/main/img/%D0%9B%D0%B5%D1%82%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9.png' style={{width: '20vw', marginLeft: '40vw'}} />
+      <div style={{display: 'flex', alignContent: 'center', alignItems: 'center', justifyContent: 'center'}}>
+        <img src='https://raw.githubusercontent.com/lavatee/facepalm/refs/heads/main/img/%D0%9B%D0%B5%D1%82%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9.png' style={{height: '20vh'}} />
+      </div>
       <h1>Таблица детей</h1>
       <ul className='table'>
         <li className='title'>
@@ -133,7 +135,9 @@ function About() {
   if (page == 1) {
     return(
       <>
-      <img src='https://raw.githubusercontent.com/lavatee/facepalm/refs/heads/main/img/%D0%9B%D0%B5%D1%82%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9.png' style={{width: '20vw', marginLeft: '40vw'}} />
+      <div style={{display: 'flex', alignContent: 'center', alignItems: 'center', justifyContent: 'center'}}>
+        <img src='https://raw.githubusercontent.com/lavatee/facepalm/refs/heads/main/img/%D0%9B%D0%B5%D1%82%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9.png' style={{height: '20vh'}} />
+      </div>
       <div style={{alignContent: 'center', alignItems: 'center', width: '80vw', marginLeft: '10vw', marginTop: '10vh'}}>
         <h1 style={{textAlign: 'center'}}>Здравствуй!</h1>
         <p style={{textAlign: 'center'}}>
@@ -160,7 +164,7 @@ function About() {
     Главной его целью является организовать новогоднее мероприятие для детей из детского
     дома в области близ Новосибирска, где каждый из них получит подарок, упомянутый в своем
     
-    новогоднем письме, и почувствует атмосферу волшебного праздника. Для своего проекта я выбрала МКУ «Центр помощи детям, оставшимся без попечения родителей» в Чистоозерном районе г.Новосибирска (https://m.vk.com/public218394644?ysclid=m2j0xdgpq9268621673)
+    новогоднем письме, и почувствует атмосферу волшебного праздника. Для своего проекта я выбрала МКУ «Центр помощи детям, оставшимся без попечения родителей» в Чистоозерном районе г.Новосибирска (<a href='https://m.vk.com/public218394644?ysclid=m2j0xdgpq9268621673'>https://m.vk.com/public218394644?ysclid=m2j0xdgpq9268621673</a>)
         </p>
         <h2 style={{color: "#4F81EB", textAlign: 'center'}}>Но мой проект невозможно будет осуществить без вашей помощи!</h2>
         <h1 style={{textAlign: 'center'}}>Итак, в чем суть моей акции?</h1>
@@ -189,7 +193,9 @@ function About() {
   if (page == 2) {
     return (
       <>
-      <img src='https://raw.githubusercontent.com/lavatee/facepalm/refs/heads/main/img/%D0%9B%D0%B5%D1%82%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9.png' style={{width: '20vw', marginLeft: '40vw'}} />
+      <div style={{display: 'flex', alignContent: 'center', alignItems: 'center', justifyContent: 'center'}}>
+        <img src='https://raw.githubusercontent.com/lavatee/facepalm/refs/heads/main/img/%D0%9B%D0%B5%D1%82%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9.png' style={{height: '20vh'}} />
+      </div>
       <div style={{alignContent: 'center', alignItems: 'center', width: '80vw', marginLeft: '10vw', marginTop: '10vh'}}>
         <h2>Таким образом, задачи у участников акции будут несложные и очень интересные:</h2>
         <p>
@@ -209,12 +215,6 @@ function About() {
         </p>
         <p>
           6. Гордиться собой и в скором времени получить фотографии детей с дня проведения праздника, новогоднее письмо выбранного вами ребенка на память, а также балы в диплом Летово!
-        </p>
-        <p>
-        Также вы можете помочь мне в подготовке мастеркласса, сладких подарков и праздничного стола, которые я буду организовывать для детей в день проведения праздника в детском доме. Любую сумму можно перевести на мои реквизиты карты в Сбербанке
-        </p>
-        <p>
-          2202208141487893, Юлия Ивановна Г., Назначение платежа: «Летовские эльфы». Подробный финансовый отчет я предоставлю в начале января.
         </p>
         <p style={{color: '#4F81EB'}}>
           По всем возникшим вопросам вы можете писать мне в ТГ (@Julis0009)
